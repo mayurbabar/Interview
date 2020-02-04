@@ -7,6 +7,7 @@ public class MaxPossibleValue {
 		System.out.println(solution(268));  // 5268
 		System.out.println(solution(670));  // 6750
 		System.out.println(solution(0));    // 50
+		System.out.println(solution(552));  // 5552
 		System.out.println(solution(-999)); // -5999
 
 	}
@@ -22,16 +23,20 @@ public class MaxPossibleValue {
 		
 		if(isNegative) {
 			int i=0;
+			
+			// Find the index of first number greater than 5
 			for(; i< sb.length(); i++) {
-				if (Integer.parseInt(String.valueOf(sb.charAt(i))) > 5)
+				if ((sb.charAt(i) - '0') > 5)
 					break;
 			}
 			sb.insert(i, 5);
 		}
 		else {
 			int i=0;
+			
+			// Find the index of first number less than 5
 			for(; i< sb.length(); i++) {
-				if (Integer.parseInt(String.valueOf(sb.charAt(i))) < 5)
+				if ((sb.charAt(i) - '0') < 5)
 					break;
 			}
 			sb.insert(i, 5);

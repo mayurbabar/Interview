@@ -14,6 +14,7 @@ public class LargestInteger {
 		Set<Integer> set = new HashSet<>();
 		int result =0;
 		
+		// Insert the inverted number into set (if not present). if present select the max of current result and number.
 		for(int num : A) {
 			int invert = num * (-1);
 			if(set.contains(invert) && Math.abs(num) > result)

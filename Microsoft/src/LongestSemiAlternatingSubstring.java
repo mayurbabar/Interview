@@ -14,37 +14,41 @@ public class LongestSemiAlternatingSubstring {
 	}
 
 	public static int solution(String S) {
+		if(S == null)
+			return 0;
+		
 		if(S.length() < 3)
 			return S.length();
 		
-//		int start =0; 
 		int curr =0, end = 1, maxLen=1, count=0;
 		char c = S.charAt(0);
 		
 		while(end < S.length()) {
 			if(S.charAt(end) == c) {
-				count++;
+				count++;  // incrementing same character count
+				
+				// valid enough to consider to be a part of the substring
 				if(count == 2) {
+					
+					// length of the current substring is greater than maxlen then update the maxlen
 					if(end - curr+1 > maxLen) {
 						maxLen = end - curr +1;
-//						start=curr;
 					}
 				}
 				else 
-					curr = end-1;
+					curr = end-1;   // count > 2, therefore we need to start a new substring; reset curr
 			}
 			else {
-				c = S.charAt(end);
-				count=1;
+				c = S.charAt(end);  // different character found, reset current character.
+				count=1;            // reset same letter consecutive appearance counter
 				
+				// length of the current substring is greater than maxlen then update the maxlen
 				if(end - curr+1 > maxLen) {
 					maxLen = end - curr +1;
-//					start=curr;
 				}
 			}
 			end++;
 		}
-//		String result = S.substring(start, start+maxLen);
 		
 		return maxLen;
 	}

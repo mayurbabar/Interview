@@ -21,6 +21,6 @@ public class StableParticle {
 			}
 		}
 		
-		return result;
+		return result < 1_000_000_000 ? result : -1;
 	}
 }

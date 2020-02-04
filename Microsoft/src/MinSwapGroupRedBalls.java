@@ -43,15 +43,22 @@ public class MinSwapGroupRedBalls {
 	public static int min_swap(String s) {
 		int red_count = 0;
 		char[] arr = s.toCharArray();
+		
+		// Count the total number of red balls
 		for (char c : arr) {
 			if (c == 'R')
 				++red_count;
 		}
-		int i = 0, j = s.length() - 1, res = 0;
+		
+		int i = 0, j = s.length() - 1, result = 0;
+		
 		while (i < j) {
+			
+			// If we find R at i and j
 			if (arr[i] == 'R' && arr[j] == 'R') {
 				red_count -= 2;
-				res += j - i - 1 - red_count;
+				result += j - i - 1 - red_count;   // we have to swap the white balls in between i and j.
+				
 				++i;
 				--j;
 			} else if (arr[i] != 'R') {
@@ -60,7 +67,7 @@ public class MinSwapGroupRedBalls {
 				--j;
 			}
 		}
-		return res;
+		return result;
 	}
 
 }

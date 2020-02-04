@@ -32,6 +32,7 @@ public class PlaneSeatReservation {
 			bookedSeats.add(str);
 		
 		for(int i=1; i<=N; i++) {
+			// Check if we can accommodate family on either side of aisle.
 			if(!bookedSeats.contains(i+"B") && !bookedSeats.contains(i+"C") && !bookedSeats.contains(i+"D") && !bookedSeats.contains(i+"E")) {
 				family++;
 				bookedSeats.add(i+"B");
@@ -40,6 +41,7 @@ public class PlaneSeatReservation {
 				bookedSeats.add(i+"E");
 			}
 			
+			// Check if we can accommodate family on either side of aisle.
 			if(!bookedSeats.contains(i+"F") && !bookedSeats.contains(i+"G") && !bookedSeats.contains(i+"H") && !bookedSeats.contains(i+"J")) {
 				family++;
 				bookedSeats.add(i+"F");
@@ -48,6 +50,7 @@ public class PlaneSeatReservation {
 				bookedSeats.add(i+"J");
 			}
 			
+			// Check if we can accommodate family on middle seats.
 			if(!bookedSeats.contains(i+"D") && !bookedSeats.contains(i+"E") && !bookedSeats.contains(i+"F") && !bookedSeats.contains(i+"G"))
 				family++;
 		}

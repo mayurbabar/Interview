@@ -1,5 +1,7 @@
 // https://leetcode.com/discuss/interview-question/398056/
 	
+// Time Complexity: O(N)
+// Space Complexity: O(1)
 public class MaxInsertWithout3a {
 
 	public static void main(String[] args) {
@@ -28,9 +30,9 @@ public class MaxInsertWithout3a {
 		}
 		
 		if(S.charAt(S.length()-1) == 'a')
-			result = 2 - countA;
+			result = 2 - countA;   // if last character is 'a' then we can add either 0 or 1 'a' at the end
 		else
-			result += 2;
+			result += 2;           // if last character is not 'a' then we can add 2 more 'a' at the end
 		
 		return result;
 	}

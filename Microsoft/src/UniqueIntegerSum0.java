@@ -13,6 +13,7 @@ public class UniqueIntegerSum0 {
 	}
 	
 	public static int[] solution(int N) {
+		// if N is odd we need to add 0 in the result
 		boolean addZero = (N%2 == 1) ? true : false;
 		int[] result = new int[N];
 		

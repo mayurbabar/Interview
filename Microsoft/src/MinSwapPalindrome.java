@@ -10,10 +10,14 @@ public class MinSwapPalindrome {
 		System.out.println(solution("asflkj")); // -1
 		System.out.println(solution("aabb"));   // 2
 		System.out.println(solution("ntiin"));  // 1
+		System.out.println(solution("nitin"));  // 0
+		System.out.println(solution(""));       // -1
+		System.out.println(solution(null));     // -1
 	}
 
 	public static int solution(String S) {
-		if(S == null || !canFormPalindrome(S))
+		// Assuming null and empty string are not a valid input strings.
+		if(S == null || S.length() == 0 || !canFormPalindrome(S))
 			return -1;
 		
 		char[] word = S.toCharArray();
@@ -22,10 +26,12 @@ public class MinSwapPalindrome {
 		while(i<j) {
 			int k=j;
 			
+			// find the character k from end(j) matching with start character(i)
 			while(word[i] != word[k] && k > i)
 				k--;
 			
 			if(word[i] == word[k] && i != k) {
+				// if matching character(k) is other than end character, swap until it becomes end character(j)
 				while(k < j) {
 					swap(word, k, k+1);
 					k++;
@@ -43,6 +49,7 @@ public class MinSwapPalindrome {
 		return result;
 	}
 	
+	// Return true if permutation of string can form palindrome.
 	private static boolean canFormPalindrome(String s) {
         Map<Character, Integer> chars = new HashMap<>();
         int oddCount = 0;

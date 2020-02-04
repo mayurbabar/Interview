@@ -11,6 +11,9 @@ public class StringWithout3ConsecutiveLetters {
 	}
 
 	public static String solution(String S) {
+		if(S == null)
+			return "";
+		
 		if(S.length() < 3)
 			return S;
 		
@@ -20,6 +23,7 @@ public class StringWithout3ConsecutiveLetters {
 		char c = sb.charAt(0);
 		
 		for(int i=1; i< S.length();i++) {
+			// Count the number of same consecutive characters
 			if(S.charAt(i) == c)
 				count++;
 			else {
@@ -27,6 +31,7 @@ public class StringWithout3ConsecutiveLetters {
 				count=1;
 			}
 			
+			// Only add to resulting string if count is less than 3 
 			if(count < 3)
 				sb.append(S.charAt(i));
 		}
