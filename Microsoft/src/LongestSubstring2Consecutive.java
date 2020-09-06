@@ -31,7 +31,7 @@ public class LongestSubstring2Consecutive {
 						start=curr;
 					}
 				}
-				else 
+				else if (count > 2)
 					curr = end-1;    // count > 2, therefore we need to start a new substring; reset curr
 			}
 			else {
