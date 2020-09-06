@@ -3,7 +3,7 @@
 import java.util.HashMap;
 import java.util.Map;
 
-public class EqualDigitSum {
+public class NumbersWithEqualDigitSum {
 
 	public static void main(String[] args) {
 		System.out.println(solution(new int[] {51,71,17,42}));                 // 93

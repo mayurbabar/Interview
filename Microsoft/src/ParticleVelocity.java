@@ -1,6 +1,7 @@
 // https://leetcode.com/discuss/interview-question/428272/Microsoft-or-count-stable-particles
+// https://leetcode.com/discuss/interview-question/428272/
 
-public class StableParticle {
+public class ParticleVelocity {
 
 	public static void main(String[] args) {
 		System.out.println(countStableInstances(new int[] {-1,1,3,3,3,2,3,2,1,0}));

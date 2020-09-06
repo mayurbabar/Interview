@@ -3,19 +3,6 @@ import java.util.Deque;
 import java.util.LinkedList;
 import java.util.List;
 
-class TreeNode{
-	int val;
-	TreeNode left;
-	TreeNode right;
-	
-	public TreeNode(int val) {
-		this.val = val;
-	}
-	
-	public TreeNode() {
-	}
-}
-
 public class LevelOrderZigZiag {
 
 	public static void main(String[] args) {
@@ -28,9 +15,9 @@ public class LevelOrderZigZiag {
 		root1.right.left = new TreeNode(15);
 		root1.right.right = new TreeNode(7);
 		
-//		zigzagLevelOrder(root1);
-//		zigzagLevelOrder2(root1);
-		zigzagLevelOrder3(root1);
+//		zigzagLevelOrder(root1);  // Wrong Answer
+//		zigzagLevelOrder2(root1); // Using Queue BFS
+		zigzagLevelOrder3(root1); // Using 2 stacks
 		// 3
 		// 20 9
 		// 17 15 7

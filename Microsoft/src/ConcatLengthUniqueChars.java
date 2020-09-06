@@ -14,7 +14,7 @@ public class ConcatLengthUniqueChars {
 		System.out.println(solution(new String[] { "abc", "def", "jkl" }));        // 9
 
 	}
-
+	
 	public static int solution(String[] A) {
         // write your code in Java SE 8
         int maxConcatlength = 0;

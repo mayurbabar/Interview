@@ -1,6 +1,6 @@
 // https://leetcode.com/discuss/interview-question/398026/
 
-public class MinMovesString {
+public class MinMovesStringWithout3IdenticalLetters {
 
 	public static void main(String[] args) {
 		System.out.println("Min moves to obtain String without 3 identical consecutive letters: ");
