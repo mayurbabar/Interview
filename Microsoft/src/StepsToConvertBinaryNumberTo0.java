@@ -18,9 +18,21 @@ public class StepsToConvertBinaryNumberTo0 {
 		System.out.println(solution("111"));           // 5
 		System.out.println(solution("1111010101111")); // 22
 		System.out.println(solution("00011100"));      // 7
+		System.out.println(solution("0"));             // 0
+		System.out.println(solution("000"));           // 0
+		System.out.println(solution("1"));             // 1
 		System.out.println(solution(null));            // 0
 		System.out.println(solution(""));              // 0
 
+		System.out.println(solve("011100"));           // 7
+		System.out.println(solve("111"));              // 5
+		System.out.println(solve("1111010101111"));    // 22
+		System.out.println(solve("00011100"));         // 7
+		System.out.println(solve("0"));                // 0
+		System.out.println(solve("000"));              // 0
+		System.out.println(solve("1"));                // 1
+		System.out.println(solve(null));               // 0
+		System.out.println(solve(""));                 // 0
 	}
 	
 	public static int solution(String S) {
@@ -37,6 +49,10 @@ public class StepsToConvertBinaryNumberTo0 {
 			leadingZero++;
 		}
 		
+		// if String consists only '0'
+		if(leadingZero == S.length())
+			return 0;
+		
 		// count total number of zeros and ones in binary string excluding leading zeros
 		for(int i=S.length()-1; i>=leadingZero; i--) {
 			if(S.charAt(i) == '0') 
@@ -46,6 +62,26 @@ public class StepsToConvertBinaryNumberTo0 {
 		}
 		
 		return ones*2 + zeros - 1;
+	}
+	
+	private static int solve(String S) {
+		if(S == null || S.length() == 0)
+			return 0;
+		
+		int num = 0, p = 1;
+		for(int i=S.length() - 1;i>=0;i--) {
+			num += S.charAt(i) == '1' ? p : 0;
+			p*=2;
+		}
+		int res = 0;
+		while(num > 0) {
+			if(num%2 == 0)
+				num/=2;
+			else
+				num--;
+			res++;
+		}
+		return res;
 	}
 
 }
